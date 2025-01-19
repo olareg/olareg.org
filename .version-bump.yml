@@ -9,6 +9,10 @@ files:
       - makefile-markdown-lint
       - makefile-hugo
       - makefile-geekdoc-theme
+  "netlify.toml":
+    processors:
+      - netlify-hugo
+      - netlify-node
 
 x-processor-tmpl:
   git-commit: &git-commit
@@ -64,21 +68,38 @@ processors:
   makefile-geekdoc-theme:
     <<: *git-tag-semver
     scanArgs:
-      regexp: '^THEME_VERSION\?=(?P<Version>v?[0-9\.]+)\s*$'
+      regexp: '^THEME_VERSION\s*=\s*(?P<Version>v?[0-9\.]+)\s*$'
     sourceArgs:
       url: "https://github.com/thegeeklab/hugo-geekdoc.git"
   makefile-hugo:
     <<: *git-tag-semver
     scanArgs:
-      regexp: '^HUGO_VERSION\?=(?P<Version>v?[0-9\.]+)\s*$'
+      regexp: '^HUGO_VERSION\s*=\s*(?P<Version>v?[0-9\.]+)\s*$'
     sourceArgs:
       url: "https://github.com/gohugoio/hugo.git"
   makefile-markdown-lint:
     <<: *registry-tag-semver
     scanArgs:
-      regexp: '^MARKDOWN_LINT_VER\?=(?P<Version>v?[0-9\.]+)\s*$'
+      regexp: '^MARKDOWN_LINT_VER\s*=\s*(?P<Version>v?[0-9\.]+)\s*$'
     sourceArgs:
       repo: "docker.io/davidanson/markdownlint-cli2"
+
+  netlify-hugo:
+    <<: *git-tag-semver
+    scanArgs:
+      regexp: '^HUGO_VERSION\s*=\s*"(?P<Version>v?[0-9\.]+)"\s*$'
+    sourceArgs:
+      url: "https://github.com/gohugoio/hugo.git"
+    # strip the "v" prefix
+    template: '{{ if eq (slice .Version 0 1) "v" }}{{ slice .Version 1 }}{{ else }}{{ .Version }}{{ end }}'
+  netlify-node:
+    <<: *git-tag-semver
+    scanArgs:
+      regexp: '^NODE_VERSION\s*=\s*"(?P<Version>v?[0-9\.]+)"\s*$'
+    sourceArgs:
+      url: "https://github.com/nodejs/node.git"
+    # only return the major version number
+    template: '{{ $major := index ( split .Version "." ) 0 }}{{ if eq (slice $major 0 1) "v" }}{{ slice $major 1 }}{{ else }}{{ $major }}{{ end }}'
 
 scans:
   regexp:

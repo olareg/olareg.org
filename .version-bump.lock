@@ -1,3 +1,5 @@
 {"name":"makefile-geekdoc-theme","key":"https://github.com/thegeeklab/hugo-geekdoc.git","version":"v1.3.0"}
-{"name":"makefile-hugo","key":"https://github.com/gohugoio/hugo.git","version":"v0.140.2"}
-{"name":"makefile-markdown-lint","key":"docker.io/davidanson/markdownlint-cli2","version":"v0.17.1"}
+{"name":"makefile-hugo","key":"https://github.com/gohugoio/hugo.git","version":"v0.141.0"}
+{"name":"makefile-markdown-lint","key":"docker.io/davidanson/markdownlint-cli2","version":"v0.17.2"}
+{"name":"netlify-hugo","key":"https://github.com/gohugoio/hugo.git","version":"v0.141.0"}
+{"name":"netlify-node","key":"https://github.com/nodejs/node.git","version":"v23.6.0"}
