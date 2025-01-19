@@ -1,0 +1,171 @@
+/* Global customization */
+
+/*
+:root {
+	--code-max-height: 60rem;
+ 
+	--header-font-family: "DancingScript";
+	--body-font-family: "DancingScript";
+	--code-font-family: "DancingScript";
+}
+*/
+/*
+@font-face {
+	font-family: "DancingScript";
+	src:
+		url("fonts/DancingScript.woff2") format("woff2"),
+		url("fonts/DancingScript.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+*/
+
+ /* Light mode theming */
+ :root,
+ :root[color-theme="light"] {
+	--header-background: #232a42;
+	--header-font-color: #dadce6;
+ 
+	--body-background: #ecedf2;
+	--body-font-color: #1c2134;
+ 
+	--mark-color: #800000;
+ 
+	--button-background: #c7cbda;
+	--button-border-color: #232a42;
+ 
+	--link-color: #384369;
+	--link-color-visited: #670000;
+ 
+	--code-background: #dadce6;
+	--code-accent-color: #313a5c;
+	--code-accent-color-lite: #465484;
+	--code-font-color: #151927;
+ 
+	--code-copy-background: #dadce6;
+	--code-copy-font-color: #2a324f;
+	--code-copy-border-color: #a2a9c1;
+	--code-copy-success-color: #008080;
+ 
+	--accent-color: #c7cbda;
+	--accent-color-lite: #ecedf2;
+ 
+	--control-icons: #b5bacd;
+ 
+	--footer-background: #232a42;
+	--footer-font-color: #dadce6;
+	--footer-link-color: #cc9999;
+	--footer-link-color-visited: #cc9999;
+ }
+ @media (prefers-color-scheme: light) {
+	:root {
+	  --header-background: #232a42;
+	  --header-font-color: #dadce6;
+ 
+	  --body-background: #ecedf2;
+	  --body-font-color: #1c2134;
+ 
+	  --mark-color: #800000;
+ 
+	  --button-background: #c7cbda;
+	  --button-border-color: #232a42;
+ 
+	  --link-color: #384369;
+	  --link-color-visited: #670000;
+ 
+	  --code-background: #dadce6;
+	  --code-accent-color: #313a5c;
+	  --code-accent-color-lite: #465484;
+	  --code-font-color: #151927;
+ 
+	  --code-copy-background: #dadce6;
+	  --code-copy-font-color: #2a324f;
+	  --code-copy-border-color: #a2a9c1;
+	  --code-copy-success-color: #008080;
+ 
+	  --accent-color: #c7cbda;
+	  --accent-color-lite: #ecedf2;
+ 
+	  --control-icons: #b5bacd;
+ 
+	  --footer-background: #232a42;
+	  --footer-font-color: #dadce6;
+	  --footer-link-color: #cc9999;
+	  --footer-link-color-visited: #cc9999;
+	}
+}
+ 
+/* Dark mode theming */
+:root[color-theme="dark"] {
+	--header-background: #232a42;
+	--header-font-color: #dadce6;
+ 
+	--body-background: #141b35;
+	--body-font-color: #c7cbda;
+ 
+	--mark-color: #800000;
+ 
+	--button-background: #3b4975;
+	--button-border-color: #232a42;
+ 
+	--link-color: #d8b2b2;
+	--link-color-visited: #bf7f7f;
+ 
+	--code-background: #0e101a;
+	--code-accent-color: #a2a9c1;
+	--code-accent-color-lite: #b5bacd;
+	--code-font-color: #c7cbda;
+ 
+	--code-copy-background: #141b35;
+	--code-copy-font-color: #dadce6;
+	--code-copy-border-color: #dadce6;
+	--code-copy-success-color: #008080;
+ 
+	--accent-color: #2b3035;
+	--accent-color-lite: #141b35;
+ 
+	--control-icons: #c7cbda;
+ 
+	--footer-background: #232a42;
+	--footer-font-color: #dadce6;
+	--footer-link-color: #cc9999;
+	--footer-link-color-visited: #cc9999;
+}
+@media (prefers-color-scheme: dark) {
+	:root {
+	  --header-background: #232a42;
+	  --header-font-color: #dadce6;
+ 
+	  --body-background: #141b35;
+	  --body-font-color: #c7cbda;
+ 
+	  --mark-color: #800000;
+ 
+	  --button-background: #3b4975;
+	  --button-border-color: #232a42;
+ 
+	  --link-color: #d8b2b2;
+	  --link-color-visited: #bf7f7f;
+ 
+	  --code-background: #0e101a;
+	  --code-accent-color: #a2a9c1;
+	  --code-accent-color-lite: #b5bacd;
+	  --code-font-color: #c7cbda;
+ 
+	  --code-copy-background: #141b35;
+	  --code-copy-font-color: #dadce6;
+	  --code-copy-border-color: #dadce6;
+	  --code-copy-success-color: #008080;
+ 
+	  --accent-color: #2b3035;
+	  --accent-color-lite: #141b35;
+ 
+	  --control-icons: #c7cbda;
+ 
+	  --footer-background: #232a42;
+	  --footer-font-color: #dadce6;
+	  --footer-link-color: #cc9999;
+	  --footer-link-color-visited: #cc9999;
+	}
+}
