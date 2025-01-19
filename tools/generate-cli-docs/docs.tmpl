@@ -1,0 +1,48 @@
+---
+title: {{.CommandPath}}
+layout: single
+warning: Auto generated content {{- /* this file is the template and may be edited */}}
+---
+
+## Synopsis
+
+{{ if gt (len .Long) 0 }}
+  {{- printf "%s\n" (trimSpace .Long) }}
+{{- else }}
+  {{- printf "%s\n" (trimSpace .Short) }}
+{{- end }}
+
+{{- if .Runnable }}
+  {{- printf "\n```shell\n%s\n```\n" (trimSpace .UseLine) }}
+{{- end }}
+
+{{- if gt (len .Aliases) 0 }}
+  {{- printf "\n## Aliases\n\n" }}
+  {{- range .Aliases }}
+    {{- printf "- %s\n" . }}
+  {{- end }}
+{{- end }}
+
+{{- if gt (len .Commands) 0 }}
+  {{- printf "\n## Available Commands\n\n" }}
+  {{- $name := .CommandPath }}
+  {{- range .Commands }}
+    {{- if or .IsAvailableCommand .IsAdditionalHelpTopicCommand }}
+      {{- printf "- [%s %s](./%s)\n" $name .Name .Name}}
+    {{- end }}
+  {{- end }}
+{{- end }}
+
+{{- if gt (len .Example) 0 }}
+  {{- printf "\n## Examples\n\n```shell\n%s\n```\n" (trimSpace .Example) }}
+{{- end }}
+
+{{- if .NonInheritedFlags.HasAvailableFlags }}
+  {{- printf "\n## Options\n\n```text\n%s```\n" .NonInheritedFlags.FlagUsages }}
+{{- end }}
+
+{{- if .InheritedFlags.HasAvailableFlags }}
+  {{- printf "\n## Options from parent commands\n\n```text\n%s```\n" .InheritedFlags.FlagUsages }}
+{{- end }}
+
+{{- /* remove linefeed */ -}}
