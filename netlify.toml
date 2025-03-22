@@ -6,3 +6,9 @@ TZ = "America/Los_Angeles"
 [build]
 publish = "public"
 command = "make all"
+
+[context.deploy-preview]
+command = "make preview-build"
+
+[context.branch-deploy]
+command = "make preview-build"
