@@ -35,6 +35,10 @@ public: ## Build public site
 serve: theme ## Run development site
 	$(HUGO) serve -D
 
+.PHONY: preview-build
+preview-build: theme ## Netlify specific preview build
+	$(HUGO) build --baseURL "$(DEPLOY_PRIME_URL)" --buildDrafts --buildFuture
+
 .PHONY: theme
 theme: ## Load theme
 	mkdir -p themes/$(THEME)
