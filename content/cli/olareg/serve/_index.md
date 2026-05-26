@@ -39,7 +39,12 @@ olareg serve --tls-cert host.pem --tls-key host.key --port 443
       --api-delete                 enable delete APIs
       --api-push                   enable push APIs (default true)
       --api-referrer               enable referrer API (default true)
+      --api-sparse-image           allow sparse image (missing layers)
+      --api-sparse-index           allow sparse index (missing platforms)
+      --auth-basic string          config file for basic auth
+      --auth-token-opaque string   config file for opaque token auth, external-url recommended
       --dir string                 root directory for storage (default ".")
+      --external-url string        externally accessible URL for the server (https://registry.example.org)
       --gc-frequency duration      garbage collection frequency (default 15m0s)
       --gc-grace-period duration   garbage collection grace period (default 1h0m0s)
       --gc-referrer-dangling       garbage collect dangling referrers
