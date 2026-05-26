@@ -116,3 +116,8 @@ cosign verify-blob \
   ${cmd}
 rm ${cmd}-${arch}.sigstore.json
 ```
+
+## Next Steps
+
+- [Authentication and Authorization](../auth/) should be configured on any publicly facing installs that aren't read-only.
+- [CLI Options](../cli/) detail how to configure the application (this are also available from the `--help` CLI flag).
