@@ -52,7 +52,7 @@ lint: lint-md ## Run all linting
 .PHONY: lint-md
 lint-md: ## Run linting for markdown
 	docker run --rm -v "$(PWD):/workdir:ro" davidanson/markdownlint-cli2:$(MARKDOWN_LINT_VER) \
-	  "**/*.md" "#public"
+	  "**/*.md" "#public" "#content/cli/olareg/completion/"
 
 .PHONY: cli-docs
 cli-docs: $(addprefix cli-docs-,$(CLI_CMDS)) ## Update CLI documentation

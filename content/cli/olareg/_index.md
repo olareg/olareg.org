@@ -11,6 +11,7 @@ Registry server based on the OCI Layout
 ## Available Commands
 
 - [olareg completion](./completion)
+- [olareg hash](./hash)
 - [olareg serve](./serve)
 - [olareg version](./version)
 
